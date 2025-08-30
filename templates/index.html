@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINI-ME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* CSS for the button's appearance */
+        .record-btn-start {
+            background-color: darkgreen;
+            color: white;
+            font-weight: bold;
+        }
+
+        .record-btn-stop {
+            background-color: darkred;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="chat-container">
+            <div class="chat-header text-center mb-4">
+                <h4>It's me MINI-ME</h4>
+            </div>
+            <div id="chat-log" class="chat-log">
+            </div>
+            <div class="chat-input-container text-center mt-4">
+                <button id="recordBtn" class="btn px-4 py-2 record-btn-start">
+                    Start Recording
+                </button>
+                <div id="statusDisplay" class="status-display mt-3">Ready to chat!</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const recordBtn = document.getElementById('recordBtn');
+        let isRecording = false;
+
+        recordBtn.addEventListener('click', () => {
+            isRecording = !isRecording; // Toggle state
+
+            if (isRecording) {
+                recordBtn.classList.remove('record-btn-start');
+                recordBtn.classList.add('record-btn-stop');
+                recordBtn.textContent = 'Stop Recording';
+            } else {
+                recordBtn.classList.remove('record-btn-stop');
+                recordBtn.classList.add('record-btn-start');
+                recordBtn.textContent = 'Start Recording';
+            }
+        });
+    </script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
