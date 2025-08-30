@@ -7,6 +7,6 @@ assemblyai
 google-generativeai
 websockets
 gunicorn
-serpapi
 pydantic
 murf
+serpapi==2.0.0
